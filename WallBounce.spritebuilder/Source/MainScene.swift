@@ -1,3 +1,4 @@
+import GameKit
 
 class MainScene: CCNode {
     
@@ -225,5 +226,6 @@ extension MainScene: CCPhysicsCollisionDelegate {
         
         return true
     }
+    
     
 }

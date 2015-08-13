@@ -23,10 +23,29 @@ class StartScreen: CCNode {
     func didLoadFromCCB() {
         
         loadRandomBall()
-        
+        setUpGameCenter()
+    }
+    
+    func reportHighScoreToGameCenter(){
+        var scoreReporter = GKScore(leaderboardIdentifier: "BounzyLeaderboard12345")
+        scoreReporter.value = Int64(GameManager.sharedInstance.levelNumber)
+        var scoreArray: [GKScore] = [scoreReporter]
+        GKScore.reportScores(scoreArray, withCompletionHandler: {(error : NSError!) -> Void in
+            if error != nil {
+                println("Game Center: Score Submission Error")
+            }
+        })
+    }
+    func showLeaderBoardYes(){
+        showLeaderboard()
+        reportHighScoreToGameCenter()
     }
 
     // MARK: - Other functions
+    func setUpGameCenter() {
+        let gameCenterInteractor = GameCenterInteractor.sharedInstance
+        gameCenterInteractor.authenticationCheck()
+    }
     
     func startGame() {
         
@@ -65,3 +84,17 @@ class StartScreen: CCNode {
     }
     
 }
+extension StartScreen: GKGameCenterControllerDelegate {
+    func showLeaderboard() {
+        var viewController = CCDirector.sharedDirector().parentViewController!
+        var gameCenterViewController = GKGameCenterViewController()
+        gameCenterViewController.gameCenterDelegate = self
+        viewController.presentViewController(gameCenterViewController, animated: true, completion: nil)
+    }
+    
+    // Delegate methods
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
+}
+

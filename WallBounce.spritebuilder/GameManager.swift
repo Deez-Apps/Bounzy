@@ -5,7 +5,7 @@
 //  Created by Declan sidoti on 8/11/15.
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
-
+import GameKit
 class GameManager {
    
     static var sharedInstance = GameManager()
@@ -19,6 +19,8 @@ class GameManager {
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
+ 
+
     
     // MARK: - Generate random positions
     func createRandomShit(#viewSize: CGSize) {

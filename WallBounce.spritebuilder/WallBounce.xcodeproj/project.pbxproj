@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14124E7C1B7C78F300A1BA97 /* GameCenterStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14124E7B1B7C78F200A1BA97 /* GameCenterStuff.swift */; };
 		143D74B91B7863760010130A /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D74B81B7863760010130A /* Screen.swift */; };
 		143D74BF1B7A7A940010130A /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D74BE1B7A7A940010130A /* GameManager.swift */; };
 		143D74C11B7B2E260010130A /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D74C01B7B2E260010130A /* StartScreen.swift */; };
@@ -141,6 +142,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14124E7B1B7C78F200A1BA97 /* GameCenterStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterStuff.swift; sourceTree = "<group>"; };
 		143583191B7BC72C00BC48ED /* Default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Default.jpg; path = ../../../../../../Downloads/Default.jpg; sourceTree = "<group>"; };
 		143D74B81B7863760010130A /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		143D74BE1B7A7A940010130A /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
@@ -451,6 +453,7 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				143D74C01B7B2E260010130A /* StartScreen.swift */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
+				14124E7B1B7C78F200A1BA97 /* GameCenterStuff.swift */,
 				143D74BE1B7A7A940010130A /* GameManager.swift */,
 				143D74B81B7863760010130A /* Screen.swift */,
 				33E007251B7C6C3900DF077C /* InfoScreen.swift */,
@@ -634,7 +637,7 @@
 						CreatedOnToolsVersion = 6.0.1;
 					};
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = E94PZ6NN69;
+						DevelopmentTeam = 8M4855ELR9;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 0;
@@ -858,6 +861,7 @@
 				B73789871807631A0076A88C /* main.m in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				143D74C11B7B2E260010130A /* StartScreen.swift in Sources */,
+				14124E7C1B7C78F300A1BA97 /* GameCenterStuff.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				143D74B91B7863760010130A /* Screen.swift in Sources */,
 				143D74BF1B7A7A940010130A /* GameManager.swift in Sources */,
