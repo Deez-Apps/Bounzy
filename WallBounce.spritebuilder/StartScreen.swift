@@ -27,7 +27,7 @@ class StartScreen: CCNode {
         
     }
     func deezLeaderBoard() {
-        showLeaderboard()
+//        showLeaderboard()
     }
     func setUpGameCenter() {
         let gameCenterInteractor = GameCenterInteractor.sharedInstance
@@ -59,24 +59,4 @@ class StartScreen: CCNode {
         }
         
     }
-    
-<<<<<<< HEAD
-<<<<<<< HEAD
-}
-extension StartScreen: GKGameCenterControllerDelegate {
-    func showLeaderboard() {
-        var viewController = CCDirector.sharedDirector().parentViewController!
-        var gameCenterViewController = GKGameCenterViewController()
-        gameCenterViewController.gameCenterDelegate = self
-        viewController.presentViewController(gameCenterViewController, animated: true, completion: nil)
-    }
-    
-    // Delegate methods
-    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
-        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
-    }
-=======
->>>>>>> parent of c6503fd... Buttons ready. Added info screen. Waiting for GameCenter integration.
-=======
->>>>>>> parent of c6503fd... Buttons ready. Added info screen. Waiting for GameCenter integration.
 }
