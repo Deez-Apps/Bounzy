@@ -17,7 +17,6 @@
 		14D168D61B7BF4CE00931CC2 /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
 		14D168D71B7BF4DB00931CC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B121034197485FE004C1E1D /* Info.plist */; };
 		14D168DF1B7C17AE00931CC2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D168DE1B7C17AE00931CC2 /* GameKit.framework */; };
-		33E007261B7C6C3900DF077C /* InfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E007251B7C6C3900DF077C /* InfoScreen.swift */; };
 		3E53115CEC90DBF9FC604B72 /* libPods-WallBounce iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BD8B38B25F5817DE4B48F7 /* libPods-WallBounce iOS.a */; };
 		5B121030197484FA004C1E1D /* WallBounceActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* WallBounceActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
@@ -152,7 +151,6 @@
 		14D168D21B7BD86700931CC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Source/libs/cocos2d-iphone/external/SSZipArchive/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		14D168D41B7BDDCC00931CC2 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		14D168DE1B7C17AE00931CC2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
-		33E007251B7C6C3900DF077C /* InfoScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreen.swift; sourceTree = "<group>"; };
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
