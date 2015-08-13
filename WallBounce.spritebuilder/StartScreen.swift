@@ -26,7 +26,7 @@ class StartScreen: CCNode {
         setUpGameCenter()
         
     }
-    func openGameCenter() {
+    func deezLeaderBoard() {
         showLeaderboard()
     }
     func setUpGameCenter() {
