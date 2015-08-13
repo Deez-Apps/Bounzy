@@ -59,4 +59,9 @@ class StartScreen: CCNode {
         }
         
     }
+<<<<<<< HEAD
 }
+=======
+    
+}
+>>>>>>> parent of c6503fd... Buttons ready. Added info screen. Waiting for GameCenter integration.
