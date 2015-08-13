@@ -3,24 +3,39 @@
 //  WallBounce
 //
 //  Created by Declan sidoti on 8/12/15.
-//  Copyright (c) 2015 Apportable. All rights reserved.
+//  Copyright (c) 2015 Declan Sidoti & Adrian Wisaksana. All rights reserved.
 //
 
 import UIKit
-import Foundation
 import GameKit
 
 
 class StartScreen: CCNode {
    
+    // MARK: - Properties
+    
     weak var gamePhysicsNode: CCPhysicsNode!
     weak var ball: CCSprite!
-    var yes = true
     weak var title: CCNode!
     
+    // MARK: - DidLoadFromCCB
     
     func didLoadFromCCB() {
         
+        loadRandomBall()
+        
+    }
+
+    // MARK: - Other function
+    
+    func startGame() {
+        
+        // remove main menu
+        self.removeFromParent()
+        
+    }
+    
+    func loadRandomBall() {
         
         let random = CGFloat(arc4random_uniform(UInt32(500)))
         let randomYo = arc4random_uniform(UInt32(10))
@@ -33,11 +48,6 @@ class StartScreen: CCNode {
         default:
             break
         }
-    }
-
-    func startGame() {
-        
-        self.removeFromParent()
         
     }
     

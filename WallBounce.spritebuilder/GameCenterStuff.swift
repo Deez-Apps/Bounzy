@@ -1,6 +1,7 @@
 // // GameCenterInteractor.swift // GameKitInteraction // // Created by Stuart Breckenridge on 19/11/14. // Copyright (c) 2014 Stuart Breckenridge. All rights reserved. //
 import UIKit
 import GameKit
+
 protocol GameCenterInteractorNotifications {
     func willSignIn()
     func didSignIn()
@@ -8,6 +9,7 @@ protocol GameCenterInteractorNotifications {
     func failedToSignIn()
 }
 class GameCenterInteractor: NSObject {
+    
     // Public Variables
     let localPlayer = GKLocalPlayer.localPlayer()
     var delegate: GameCenterInteractorNotifications?

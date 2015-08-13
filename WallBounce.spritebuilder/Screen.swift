@@ -6,14 +6,14 @@
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
 
-import UIKit
 
 class Screen: CCNode {
-    weak var retryLose: CCButton!
     
-    func retry(){
+    func retry() {
+        
         let gamePlay = CCBReader.loadAsScene("MainScene")
         CCDirector.sharedDirector().presentScene(gamePlay)
         
     }
+    
 }

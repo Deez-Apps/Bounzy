@@ -51,7 +51,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCNodeColor</string>
+				<string>background</string>
 				<key>memberVarAssignmentName</key>
 				<string></string>
 				<key>memberVarAssignmentType</key>
@@ -157,7 +157,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>Oval 2</string>
+						<string>redBall</string>
 						<key>memberVarAssignmentName</key>
 						<string>gameFinish</string>
 						<key>memberVarAssignmentType</key>
@@ -299,7 +299,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>Oval 1</string>
+						<string>blueBall</string>
 						<key>memberVarAssignmentName</key>
 						<string>gameBall</string>
 						<key>memberVarAssignmentType</key>
@@ -441,7 +441,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>leftwall</string>
+						<string>leftWall</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -478,14 +478,14 @@
 								</array>
 								<array>
 									<real>0.0</real>
-									<real>453</real>
+									<real>906</real>
 								</array>
 								<array>
-									<real>23</real>
-									<real>453</real>
+									<real>47</real>
+									<real>906</real>
 								</array>
 								<array>
-									<real>23</real>
+									<real>47</real>
 									<real>0.0</real>
 								</array>
 							</array>
@@ -493,16 +493,16 @@
 							<array>
 								<array>
 									<array>
-										<real>23</real>
+										<real>47</real>
 										<real>0.0</real>
 									</array>
 									<array>
-										<real>23</real>
-										<real>453</real>
+										<real>47</real>
+										<real>906</real>
 									</array>
 									<array>
 										<real>0.0</real>
-										<real>453</real>
+										<real>906</real>
 									</array>
 									<array>
 										<real>0.0</real>
@@ -651,14 +651,14 @@
 								</array>
 								<array>
 									<real>0.0</real>
-									<real>453</real>
+									<real>906</real>
 								</array>
 								<array>
-									<real>23</real>
-									<real>453</real>
+									<real>47</real>
+									<real>906</real>
 								</array>
 								<array>
-									<real>23</real>
+									<real>47</real>
 									<real>0.0</real>
 								</array>
 							</array>
@@ -666,16 +666,16 @@
 							<array>
 								<array>
 									<array>
-										<real>23</real>
+										<real>47</real>
 										<real>0.0</real>
 									</array>
 									<array>
-										<real>23</real>
-										<real>453</real>
+										<real>47</real>
+										<real>906</real>
 									</array>
 									<array>
 										<real>0.0</real>
-										<real>453</real>
+										<real>906</real>
 									</array>
 									<array>
 										<real>0.0</real>
@@ -795,7 +795,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>Wall</string>
+						<string>topWall</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -832,14 +832,14 @@
 								</array>
 								<array>
 									<real>0.0</real>
-									<real>453</real>
+									<real>906</real>
 								</array>
 								<array>
-									<real>23</real>
-									<real>453</real>
+									<real>47</real>
+									<real>906</real>
 								</array>
 								<array>
-									<real>23</real>
+									<real>47</real>
 									<real>0.0</real>
 								</array>
 							</array>
@@ -847,16 +847,16 @@
 							<array>
 								<array>
 									<array>
-										<real>23</real>
+										<real>47</real>
 										<real>0.0</real>
 									</array>
 									<array>
-										<real>23</real>
-										<real>453</real>
+										<real>47</real>
+										<real>906</real>
 									</array>
 									<array>
 										<real>0.0</real>
-										<real>453</real>
+										<real>906</real>
 									</array>
 									<array>
 										<real>0.0</real>
@@ -976,7 +976,7 @@
 						<key>customClass</key>
 						<string></string>
 						<key>displayName</key>
-						<string>Wall</string>
+						<string>bottomWall</string>
 						<key>memberVarAssignmentName</key>
 						<string></string>
 						<key>memberVarAssignmentType</key>
@@ -1013,14 +1013,14 @@
 								</array>
 								<array>
 									<real>0.0</real>
-									<real>453</real>
+									<real>906</real>
 								</array>
 								<array>
-									<real>23</real>
-									<real>453</real>
+									<real>47</real>
+									<real>906</real>
 								</array>
 								<array>
-									<real>23</real>
+									<real>47</real>
 									<real>0.0</real>
 								</array>
 							</array>
@@ -1028,16 +1028,16 @@
 							<array>
 								<array>
 									<array>
-										<real>23</real>
+										<real>47</real>
 										<real>0.0</real>
 									</array>
 									<array>
-										<real>23</real>
-										<real>453</real>
+										<real>47</real>
+										<real>906</real>
 									</array>
 									<array>
 										<real>0.0</real>
-										<real>453</real>
+										<real>906</real>
 									</array>
 									<array>
 										<real>0.0</real>
@@ -1146,6 +1146,8 @@
 								<array/>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
@@ -1248,7 +1250,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>CCLabelTTF</string>
+				<string>requiredHitsLabel</string>
 				<key>memberVarAssignmentName</key>
 				<string>wallHits</string>
 				<key>memberVarAssignmentType</key>
@@ -1468,7 +1470,7 @@
 				<key>customClass</key>
 				<string></string>
 				<key>displayName</key>
-				<string>topRightText</string>
+				<string>counterLabel</string>
 				<key>memberVarAssignmentName</key>
 				<string>hitCounter</string>
 				<key>memberVarAssignmentType</key>
@@ -1682,7 +1684,7 @@
 		<key>customClass</key>
 		<string>MainScene</string>
 		<key>displayName</key>
-		<string>CCNode</string>
+		<string>background</string>
 		<key>memberVarAssignmentName</key>
 		<string></string>
 		<key>memberVarAssignmentType</key>

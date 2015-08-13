@@ -1,15 +1,26 @@
-import Foundation
 
-
-class MainScene: CCNode, CCPhysicsCollisionDelegate {
+class MainScene: CCNode {
+    
+    // MARK: - Properties
     
     weak var gamePhysicsNode: CCPhysicsNode!
+    
+    // exhibition
+    var yes = true
+    
+    // balls
     weak var gameBall: CCNode!
     weak var gameFinish: CCNode!
+    
+    // walls
     weak var wall: CCNode!
     weak var wallHits: CCLabelTTF!
+    
+    // retry
     weak var retryWin: CCButton!
     weak var retryLose: CCButton!
+    
+    // hit counter
     weak var hitCounter: CCLabelTTF!
     var counter = 0 {
         didSet {
@@ -20,90 +31,82 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
     // level number
     var levelNumber = 0
     
-    var touchCounter = 0
-    var isSwipe = false
+    // swipe
+    var isSwiping = false
+    var initialPosition: CGPoint?
     
     // mixpanel
     let mixpanel = Mixpanel.sharedInstanceWithToken("a18edff4182e75cc5a162c7967ae4cac")
     
+
+    // MARK: - DidLoadFromCCB
     
-    var touchPosition: CGPoint = ccp(0, 0)
-    var initialPosition: CGPoint?
-    
-    func didLoadFromCCB(){
-        userInteractionEnabled = true
+    func didLoadFromCCB() {
         
-        gamePhysicsNode.debugDraw = false
+        userInteractionEnabled = true
         
         gamePhysicsNode.collisionDelegate = self
         
         // levels
         levelNumber = GameManager.sharedInstance.levelNumber
-        println(levelNumber)
+        
+        // label display
         wallHits.string = "Bounzys needed: \(levelNumber)"
         
         // load start screen
-        if levelNumber == 0 {
+        if (levelNumber == 0) {
             let startScreen = CCBReader.load("StartScreen") as! StartScreen
             addChild(startScreen)
         }
-        
-        gameBall.physicsBody.density = 1
         
         // wall counter
         hitCounter.string = "\(counter)"
         
         // if this level is not the same as previous, do random
         let viewSize = CCDirector.sharedDirector().viewSize()
+        
+        // generate random positions
         GameManager.sharedInstance.createRandomShit(viewSize: viewSize)
         
         let distance = ccpDistance(gameFinish.position, gameBall.position)
-        if distance < 50 {
-            
-            if levelNumber != 0 {
-                // other than first level
-                let position = GameManager.sharedInstance.endingLocations[levelNumber]
-                gameFinish.position = gamePhysicsNode.convertToNodeSpace(position)
-            } else {
-                // first level
-                let positionX = viewSize.width/2
-                let positionY = viewSize.height/2
-                let position = ccp(positionX, positionY)
-                gameFinish.position = gamePhysicsNode.convertToNodeSpace(position)
-                
-            }
-        } else {
-            
-            if levelNumber != 0 {
-                // other than first level
-                let position = GameManager.sharedInstance.endingLocations[levelNumber]
-                gameFinish.position = gamePhysicsNode.convertToNodeSpace(position)
-            } else {
-                // first level
-                let positionX = viewSize.width/2
-                let positionY = viewSize.height/2
-                let position = ccp(positionX, positionY)
-                gameFinish.position = gamePhysicsNode.convertToNodeSpace(position)
-                
-            }
-        }
-
         
-        if levelNumber == 0 {
-            loadTutorial()
-        }
-        
+        // set constraints
+        setPosition(distance: distance, viewSize: viewSize)
         
     }
     
-    func loadTutorial(){
-        let tutorial = CCBReader.load("Tutorial")
-        addChild(tutorial)
+    func setPosition(#distance: CGFloat, viewSize: CGSize) {
+        
+        if (distance < 50) {
+            setPosition(distance: distance, viewSize: viewSize)
+        } else {
+            setBallPosition(viewSize: viewSize)
+        }
+        
     }
+    
+    func setBallPosition(#viewSize: CGSize) {
+        
+        if (levelNumber != 0) {
+            // other than first level
+            let position = GameManager.sharedInstance.endingLocations[levelNumber]
+            gameFinish.position = gamePhysicsNode.convertToNodeSpace(position)
+        } else {
+            // first level
+            let positionX = viewSize.width/2
+            let positionY = viewSize.height/2
+            let position = ccp(positionX, positionY)
+            gameFinish.position = gamePhysicsNode.convertToNodeSpace(position)
+        }
+        
+    }
+
+    // MARK: - Update function
     
     override func update(delta: CCTime) {
         
-        if counter > levelNumber {
+        if (counter > levelNumber) {
+            
             // game lost
             paused = true
             let losingScreen = CCBReader.load("Lose")
@@ -116,70 +119,70 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         
     }
     
+    // MARK: - Touch overrides
     
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
         
         initialPosition = touch.locationInWorld()
-        
 
-        gameBall.position = touch.locationInWorld()
-        
+        gameBall.position = initialPosition!
         
     }
     
     override func touchMoved(touch: CCTouch!, withEvent event: CCTouchEvent!) {
         
         // touch moved
-        isSwipe = true
-        
+        isSwiping = true
         
     }
-    
     
     override func touchCancelled(touch: CCTouch!, withEvent event: CCTouchEvent!) {
 
         // touch cancelled
-        let finalPosition = touch.locationInWorld()
-
-        dragThisShit(finalPosition)
+        let finalTouchPosition = touch.locationInWorld()
+        dragThisShit(finalPosition: finalTouchPosition)
         
     }
     
     override func touchEnded(touch: CCTouch!, withEvent event: CCTouchEvent!) {
         
         // touch ended
-        let finalPosition = touch.locationInWorld()
+        let finalTouchPosition = touch.locationInWorld()
         
-        
-        if finalPosition != initialPosition {
-            dragThisShit(finalPosition)
-
+        if finalTouchPosition != initialPosition {
+            dragThisShit(finalPosition: finalTouchPosition)
         }
-
         
     }
     
-    func dragThisShit(finalPosition: CGPoint) {
+    func dragThisShit(#finalPosition: CGPoint) {
     
         // create vector
-
-        if (isSwipe){
+        if (isSwiping) {
+            
             if let initialPosition = initialPosition {
                 let vector = ccpSub(finalPosition, initialPosition)
                 let normalizedVect = ccpNormalize(vector)
                 
-                let superAwesomeVect = ccpMult(normalizedVect, 300)
+                let impulseMultiplier: CGFloat = 300
+                let finalImpulseVect = ccpMult(normalizedVect, impulseMultiplier)
                 
-                gameBall.physicsBody.applyImpulse(superAwesomeVect)
+                gameBall.physicsBody.applyImpulse(finalImpulseVect)
                 
+                // disable user interaction
                 userInteractionEnabled = false
             }
+            
         }
 
-        
     }
     
+}
+
+
+extension MainScene: CCPhysicsCollisionDelegate {
     
+    // wall collision
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, wall: CCNode!, ball: CCNode!) -> Bool {
         
         counter++
@@ -187,24 +190,11 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         return true
         
     }
-    func retryLoseGame(){
-        
-        // mixpanel track lost
-        mixpanel.track("Game retried")
-        
-        let gameplay = CCBReader.loadAsScene("MainScene")
-        CCDirector.sharedDirector().presentScene(gameplay)
-        
-        
-        
-    }
-    func retryWinGame(){
-        let gameplay = CCBReader.loadAsScene("MainScene")
-        CCDirector.sharedDirector().presentScene(gameplay)
-    }
+    
+    // ball collisions
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, ball: CCNode!, bigBall: CCSprite!) -> Bool {
         
-        if counter == levelNumber {
+        if (counter == levelNumber) {
             
             // mixpanel track lost
             mixpanel.track("Game won")
@@ -214,9 +204,6 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
             let winningScreen = CCBReader.load("Win", owner: self) as! Screen
             addChild(winningScreen)
             
-            
-            
-            
         } else {
             paused = true
             let losingScreen = CCBReader.load("Lose", owner: self) as! Screen
@@ -225,10 +212,5 @@ class MainScene: CCNode, CCPhysicsCollisionDelegate {
         
         return true
     }
-    
-    
-    
-    
-    
     
 }

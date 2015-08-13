@@ -9,6 +9,8 @@
 class GameManager {
    
     static var sharedInstance = GameManager()
+    
+    // MARK: - Properties
     var endingLocations: [CGPoint] = []
 
     var levelNumber: Int = NSUserDefaults.standardUserDefaults().integerForKey("DeezLevel") ?? 0 {
@@ -18,20 +20,19 @@ class GameManager {
         }
     }
     
+    // MARK: - Generate random positions
     func createRandomShit(#viewSize: CGSize) {
         
-        for i in 1..<20 {
+        for i in 1..<50 {
             
             let randomX = CGFloat(arc4random_uniform(UInt32(viewSize.width)))
             let randomY = CGFloat(arc4random_uniform(UInt32(viewSize.height)))
             let randomPos = ccp(randomX, randomY)
-            println(randomPos)
             endingLocations.append(randomPos)
     
         }
         
     }
-    
 
     
 }
