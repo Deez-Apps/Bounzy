@@ -61,6 +61,7 @@ class StartScreen: CCNode {
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 }
 extension StartScreen: GKGameCenterControllerDelegate {
     func showLeaderboard() {
@@ -74,6 +75,8 @@ extension StartScreen: GKGameCenterControllerDelegate {
     func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
         gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
     }
+=======
+>>>>>>> parent of c6503fd... Buttons ready. Added info screen. Waiting for GameCenter integration.
 =======
 >>>>>>> parent of c6503fd... Buttons ready. Added info screen. Waiting for GameCenter integration.
 }
