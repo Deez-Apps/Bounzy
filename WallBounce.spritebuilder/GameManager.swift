@@ -19,8 +19,6 @@ class GameManager {
             NSUserDefaults.standardUserDefaults().synchronize()
         }
     }
- 
-
     
     // MARK: - Generate random positions
     func createRandomShit(#viewSize: CGSize) {

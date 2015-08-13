@@ -1,14 +1,22 @@
+
 // // GameCenterInteractor.swift // GameKitInteraction // // Created by Stuart Breckenridge on 19/11/14. // Copyright (c) 2014 Stuart Breckenridge. All rights reserved. //
+
 import UIKit
 import GameKit
+
+// MARK: Interactor notification protocol
 protocol GameCenterInteractorNotifications {
+    
     func willSignIn()
     func didSignIn()
     func failedToSignInWithError(anError:NSError)
     func failedToSignIn()
+    
 }
+
 class GameCenterInteractor: NSObject {
     
+    // MARK: - Properties
     
     // Public Variables
     let localPlayer = GKLocalPlayer.localPlayer()
@@ -23,10 +31,11 @@ class GameCenterInteractor: NSObject {
         return Static.instance
     }
     
-    //MARK: 1 Check authentication status
+    // MARK: 1. Check authentication status
     /**
     This is the public method that begins the authentication process for the local player.
     */
+    
     func authenticationCheck()
     {
         if (self.localPlayer.authenticated == false)
@@ -44,10 +53,11 @@ class GameCenterInteractor: NSObject {
         }
     }
     
-    //MARK: 2 Authenticate the Player
+    // MARK: 2. Authenticate the Player
     /**
     This is a private method to authenticate the local player with Game Center.
     */
+    
     private func authenticateLocalPlayer()
     {
         self.delegate?.willSignIn()
@@ -83,18 +93,26 @@ class GameCenterInteractor: NSObject {
         }
     }
     
-    //MARK: 3 Show Authentication Dialogue
+    // MARK: 3. Show Authentication Dialogue
     /**
     When appropriate, this function will be called and will present the Game Center login view controller.
     
     :param: presentingViewController The view controller that will present the game center view controller.
     :param: gameCenterController     The game center controller.
     */
+    
     func showAuthenticationDialogueWhenReasonable(#presentingViewController:UIViewController, gameCenterController:UIViewController)
     {
         presentingViewController.presentViewController(gameCenterController, animated: true, completion: nil)
     }
+    
 }
+
 extension GameCenterInteractor:GKLocalPlayerListener {
+    
     // Add functions for monitoring match changes.
+    
 }
+
+
+
