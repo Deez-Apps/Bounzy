@@ -185,7 +185,9 @@ extension MainScene: CCPhysicsCollisionDelegate {
     // wall collision
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, wall: CCNode!, ball: CCNode!) -> Bool {
         
-        counter++
+        if (gameBall.physicsBody.velocity.x != 0) {
+            counter++
+        }
         
         return true
         
