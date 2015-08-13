@@ -10,12 +10,17 @@
 		143D74B91B7863760010130A /* Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D74B81B7863760010130A /* Screen.swift */; };
 		143D74BF1B7A7A940010130A /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D74BE1B7A7A940010130A /* GameManager.swift */; };
 		143D74C11B7B2E260010130A /* StartScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 143D74C01B7B2E260010130A /* StartScreen.swift */; };
+		149E007A1B7C6758006F1A71 /* GameCenterStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149E00791B7C6758006F1A71 /* GameCenterStuff.swift */; };
+		149E007E1B7C6AF1006F1A71 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 149E007D1B7C6AF1006F1A71 /* GameKit.framework */; };
 		14D168D31B7BD86700931CC2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14D168D21B7BD86700931CC2 /* Images.xcassets */; };
 		14D168D51B7BDDCC00931CC2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 14D168D41B7BDDCC00931CC2 /* LaunchScreen.xib */; };
 		14D168D61B7BF4CE00931CC2 /* Published-iOS in Resources */ = {isa = PBXBuildFile; fileRef = B737893A180761570076A88C /* Published-iOS */; };
 		14D168D71B7BF4DB00931CC2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B121034197485FE004C1E1D /* Info.plist */; };
+<<<<<<< HEAD
 		14D168DF1B7C17AE00931CC2 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14D168DE1B7C17AE00931CC2 /* GameKit.framework */; };
 		33E007261B7C6C3900DF077C /* InfoScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E007251B7C6C3900DF077C /* InfoScreen.swift */; };
+=======
+>>>>>>> origin/Declan's-Awesome-Branch
 		3E53115CEC90DBF9FC604B72 /* libPods-WallBounce iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 63BD8B38B25F5817DE4B48F7 /* libPods-WallBounce iOS.a */; };
 		5B121030197484FA004C1E1D /* WallBounceActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B12102F197484FA004C1E1D /* WallBounceActivity.m */; };
 		5B121038197487F2004C1E1D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B737893E1807617C0076A88C /* AppDelegate.m */; };
@@ -145,10 +150,15 @@
 		143D74B81B7863760010130A /* Screen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Screen.swift; sourceTree = "<group>"; };
 		143D74BE1B7A7A940010130A /* GameManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		143D74C01B7B2E260010130A /* StartScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreen.swift; sourceTree = "<group>"; };
+		149E00791B7C6758006F1A71 /* GameCenterStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCenterStuff.swift; sourceTree = "<group>"; };
+		149E007D1B7C6AF1006F1A71 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		14D168D21B7BD86700931CC2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Source/libs/cocos2d-iphone/external/SSZipArchive/Images.xcassets"; sourceTree = SOURCE_ROOT; };
 		14D168D41B7BDDCC00931CC2 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		14D168DE1B7C17AE00931CC2 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		33E007251B7C6C3900DF077C /* InfoScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoScreen.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> origin/Declan's-Awesome-Branch
 		5B12100919748273004C1E1D /* libEGL.so */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEGL.so; path = /usr/lib/armv7a/libEGL.so; sourceTree = SDKROOT; };
 		5B12100F197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
 		5B121011197483EE004C1E1D /* ic_launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_launcher.png; sourceTree = "<group>"; };
@@ -257,11 +267,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D168DF1B7C17AE00931CC2 /* GameKit.framework in Frameworks */,
 				7A97911819E631CD001FFC4D /* libcocos2d.a in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
 				B77F1B3417B978D7009739AE /* OpenGLES.framework in Frameworks */,
+				149E007E1B7C6AF1006F1A71 /* GameKit.framework in Frameworks */,
 				B77F1B3617B978D7009739AE /* OpenAL.framework in Frameworks */,
 				B77F1B3817B978D7009739AE /* AudioToolbox.framework in Frameworks */,
 				B77F1B3A17B978D7009739AE /* AVFoundation.framework in Frameworks */,
@@ -450,6 +460,7 @@
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				143D74C01B7B2E260010130A /* StartScreen.swift */,
+				149E00791B7C6758006F1A71 /* GameCenterStuff.swift */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				143D74BE1B7A7A940010130A /* GameManager.swift */,
 				143D74B81B7863760010130A /* Screen.swift */,
@@ -507,7 +518,7 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				14D168DE1B7C17AE00931CC2 /* GameKit.framework */,
+				149E007D1B7C6AF1006F1A71 /* GameKit.framework */,
 				BC5399D31A44DCC90063F482 /* AndroidKit.framework */,
 				BC5399D41A44DCC90063F482 /* CoreJava.framework */,
 				BC5399D51A44DCC90063F482 /* GLActivityKit.framework */,
@@ -634,10 +645,10 @@
 						CreatedOnToolsVersion = 6.0.1;
 					};
 					B77F1B2D17B978D7009739AE = {
-						DevelopmentTeam = E94PZ6NN69;
+						DevelopmentTeam = 8M4855ELR9;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -860,6 +871,7 @@
 				143D74C11B7B2E260010130A /* StartScreen.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 				143D74B91B7863760010130A /* Screen.swift in Sources */,
+				149E007A1B7C6758006F1A71 /* GameCenterStuff.swift in Sources */,
 				143D74BF1B7A7A940010130A /* GameManager.swift in Sources */,
 				33E007261B7C6C3900DF077C /* InfoScreen.swift in Sources */,
 			);

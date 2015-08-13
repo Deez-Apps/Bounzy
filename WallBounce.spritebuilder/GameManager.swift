@@ -5,7 +5,7 @@
 //  Created by Declan sidoti on 8/11/15.
 //  Copyright (c) 2015 Apportable. All rights reserved.
 //
-
+import GameKit
 class GameManager {
    
     static var sharedInstance = GameManager()
@@ -17,7 +17,18 @@ class GameManager {
         didSet {
             NSUserDefaults.standardUserDefaults().setObject(levelNumber, forKey: "DeezLevel")
             NSUserDefaults.standardUserDefaults().synchronize()
+            reportHighScoreToGameCenter()
         }
+    }
+    func reportHighScoreToGameCenter(){
+        var scoreReporter = GKScore(leaderboardIdentifier: "BounzyLeaderboard12345")
+        scoreReporter.value = Int64(levelNumber)
+        var scoreArray: [GKScore] = [scoreReporter]
+        GKScore.reportScores(scoreArray, withCompletionHandler: {(error : NSError!) -> Void in
+            if error != nil {
+                println("Game Center: Score Submission Error")
+            }
+        })
     }
     
     // MARK: - Generate random positions

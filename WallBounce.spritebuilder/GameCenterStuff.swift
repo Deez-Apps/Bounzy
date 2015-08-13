@@ -1,7 +1,6 @@
 // // GameCenterInteractor.swift // GameKitInteraction // // Created by Stuart Breckenridge on 19/11/14. // Copyright (c) 2014 Stuart Breckenridge. All rights reserved. //
 import UIKit
 import GameKit
-
 protocol GameCenterInteractorNotifications {
     func willSignIn()
     func didSignIn()
@@ -9,6 +8,7 @@ protocol GameCenterInteractorNotifications {
     func failedToSignIn()
 }
 class GameCenterInteractor: NSObject {
+    
     
     // Public Variables
     let localPlayer = GKLocalPlayer.localPlayer()
@@ -43,13 +43,6 @@ class GameCenterInteractor: NSObject {
             // At this point you can download match data from Game Center.
         }
     }
-    func reportHighScoreToGameCenter(){ var scoreReporter = GKScore(leaderboardIdentifier: "YOUR LEADERBOARD IDENTIFIER GOES HERE")
-        
-            
-            
-        }
-    }
-    
     
     //MARK: 2 Authenticate the Player
     /**

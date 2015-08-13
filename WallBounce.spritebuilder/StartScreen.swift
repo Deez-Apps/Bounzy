@@ -23,8 +23,17 @@ class StartScreen: CCNode {
     func didLoadFromCCB() {
         
         loadRandomBall()
+        setUpGameCenter()
         
     }
+    func deezLeaderBoard() {
+        showLeaderboard()
+    }
+    func setUpGameCenter() {
+        let gameCenterInteractor = GameCenterInteractor.sharedInstance
+        gameCenterInteractor.authenticationCheck()
+    }
+    
 
     // MARK: - Other functions
     
@@ -64,4 +73,17 @@ class StartScreen: CCNode {
         
     }
     
+}
+extension StartScreen: GKGameCenterControllerDelegate {
+    func showLeaderboard() {
+        var viewController = CCDirector.sharedDirector().parentViewController!
+        var gameCenterViewController = GKGameCenterViewController()
+        gameCenterViewController.gameCenterDelegate = self
+        viewController.presentViewController(gameCenterViewController, animated: true, completion: nil)
+    }
+    
+    // Delegate methods
+    func gameCenterViewControllerDidFinish(gameCenterViewController: GKGameCenterViewController!) {
+        gameCenterViewController.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
