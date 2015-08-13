@@ -177,18 +177,7 @@ class MainScene: CCNode {
 
     }
     
-    // MARK: - Home
-    
-    func goToHome() {
-        
-        let homeScreen = CCBReader.load("StartScreen") as! StartScreen
-        addChild(homeScreen)
-        
-    }
-    
-    
 }
-
 
 
 extension MainScene: CCPhysicsCollisionDelegate {

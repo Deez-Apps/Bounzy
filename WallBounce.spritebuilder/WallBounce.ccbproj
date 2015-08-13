@@ -88,17 +88,7 @@
 			<key>scaleFrom</key>
 			<integer>2</integer>
 		</dict>
-		<key>Assets/home_btn.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>2</integer>
-		</dict>
 		<key>Assets/info_btn.png</key>
-		<dict>
-			<key>scaleFrom</key>
-			<integer>2</integer>
-		</dict>
-		<key>Assets/leaderBoard_btn.png</key>
 		<dict>
 			<key>scaleFrom</key>
 			<integer>2</integer>

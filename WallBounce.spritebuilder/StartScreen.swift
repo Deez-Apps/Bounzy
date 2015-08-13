@@ -35,7 +35,7 @@ class StartScreen: CCNode {
     }
     
 
-    // MARK: - Other functions
+    // MARK: - Other function
     
     func startGame() {
         
@@ -57,19 +57,6 @@ class StartScreen: CCNode {
         default:
             break
         }
-        
-    }
-    
-    // MARK: - Show Leaderboard
-    
-    // insert code here
-    
-    // MARK - Info screen
-    
-    func showInfoScreen() {
-        
-        let infoScreen = CCBReader.load("InfoScreen") as! InfoScreen
-        addChild(infoScreen)
         
     }
     
