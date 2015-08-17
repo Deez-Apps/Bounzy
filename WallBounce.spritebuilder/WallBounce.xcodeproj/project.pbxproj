@@ -796,13 +796,14 @@
 			files = (
 			);
 			inputPaths = (
+				"",
 			);
 			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# osascript -e 'tell application \"System Events\"' -e 'set ProcessList to name of every process' -e 'if \"SpriteBuilder\" is in ProcessList then' -e 'tell application \"SpriteBuilder\" to publish' -e 'end if' -e 'end tell'";
+			shellScript = "# osascript -e 'tell application \"System Events\"' -e 'set ProcessList to name of every process' -e 'if \"SpriteBuilder\" is in ProcessList then' -e 'tell application \"SpriteBuilder\" to publish' -e 'end if' -e 'end tell'\n\"${PODS_ROOT}/Fabric/Fabric.framework/run\" ed5c9a116caee97ae9e39fe7f93f2b1cf58d570a 5a63849b2730cb67b4c74867d52b4ce2e45c20b2ad0bea7c730b488939304e59";
 		};
 		D352B47A19EC5D8A00829775 /* Compile Metal Shaders */ = {
 			isa = PBXShellScriptBuildPhase;

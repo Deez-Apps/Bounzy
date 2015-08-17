@@ -4,6 +4,8 @@
 
 target 'WallBounce iOS' do
   pod 'Mixpanel'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end
 
 target 'WallBounce Android' do

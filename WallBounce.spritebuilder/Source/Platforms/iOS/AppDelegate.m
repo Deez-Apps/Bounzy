@@ -30,6 +30,8 @@
 
 #import "Mixpanel.h"
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 
 @implementation AppController
@@ -37,6 +39,10 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     
+    // Fabric & Crasylytics
+    [Fabric with:@[CrashlyticsKit]];
+
+    // Mixpanel
     [Mixpanel sharedInstanceWithToken:@"a18edff4182e75cc5a162c7967ae4cac"];
     [[Mixpanel sharedInstance] track:@"App launched"];
     

@@ -17,6 +17,10 @@ class GameManager {
         didSet {
             NSUserDefaults.standardUserDefaults().setObject(levelNumber, forKey: "DeezLevel")
             NSUserDefaults.standardUserDefaults().synchronize()
+            
+            // track level up
+            Mixpanel.sharedInstance().track("Leveled up", properties: ["Level number": levelNumber])
+            
         }
     }
     
